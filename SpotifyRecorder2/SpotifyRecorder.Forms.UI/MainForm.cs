@@ -371,7 +371,7 @@ namespace SpotifyRecorder.Forms.UI
         private void LoadWasapiDevicesCombo()
         {
             var deviceEnum = new MMDeviceEnumerator();
-            var devices = deviceEnum.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active).ToList();
+            var devices = deviceEnum.EnumerateAudioEndPoints(DataFlow.Render, DeviceState.Active).ToList();
 
             deviceListBox.DataSource = devices;
             deviceListBox.DisplayMember = "FriendlyName";

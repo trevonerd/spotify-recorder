@@ -38,7 +38,7 @@ namespace SpotifyRecorder.Forms.UI
             FilePath = filePath;
             Song = song;
 
-            _waveIn = new WasapiCapture(Device);
+            _waveIn = new WasapiLoopbackCapture(Device);
             _writer = new WaveFileWriter(FilePath, _waveIn.WaveFormat);
             _waveIn.DataAvailable += OnDataAvailable;
 
